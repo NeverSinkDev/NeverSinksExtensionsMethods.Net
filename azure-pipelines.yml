@@ -27,7 +27,7 @@ steps:
 - task: DotNetCoreCLI@2 
   displayName: 'dotnet build' 
   inputs: 
-    projects: '$(Parameters.projects)' 
+    projects: '**/*.csproj'
     arguments: '--configuration $(BuildConfiguration) /p:Version=$(GitVersion.NuGetVersion)' 
     versioningScheme: byBuildNumber
  
@@ -35,7 +35,7 @@ steps:
   displayName: 'dotnet pack' 
   inputs: 
     command: pack
-    packagesToPack: '$(Parameters.projects)' 
+    packagesToPack: '**/*.csproj'
     nobuild: true 
     versioningScheme: byEnvVar 
     versionEnvVar: GitVersion.NuGetVersion
