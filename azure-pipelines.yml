@@ -14,7 +14,7 @@ steps:
   displayName: gitversion
   inputs:
     useConfigFile: true
-    configFilePath: GitVersion.yml
+    configFilePath: gitversion.yml
 
 - task: DotNetCoreInstaller@0
   displayName: 'Use .NET Core sdk 2.2.104' 
