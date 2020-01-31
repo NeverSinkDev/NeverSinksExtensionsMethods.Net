@@ -45,7 +45,7 @@ steps:
     versioningScheme: byEnvVar 
     versionEnvVar: GitVersion.NuGetVersion
 
-- task: DotNetCoreCLI@2 
+- task: DotNetCoreCLI@2
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
