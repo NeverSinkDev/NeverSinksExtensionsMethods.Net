@@ -1,9 +1,14 @@
-pool: 
-  name: LabAgents
- 
-variables: 
-  BuildConfiguration: 'release'
- 
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
 steps: 
 
 - task: DotNetCoreInstaller@0
