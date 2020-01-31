@@ -16,14 +16,13 @@ steps:
   inputs: 
     version: 2.2.104
   
-- task: DotNetCoreCLI@2 
-  displayName: 'dotnet restore from feed' 
-  inputs: 
-    command: restore 
-    projects: '$(Parameters.projects)' 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'select'
     vstsFeed: '679d4c1d-f66f-49a2-ac93-06e71eb6e4b5/865786bf-d228-4309-a51f-ce69234bc5d2'
-    includeNuGetOrg: false 
-    versioningScheme: byBuildNumber
+    includeNuGetOrg: false
  
 - task: DotNetCoreCLI@2 
   displayName: 'dotnet build' 
