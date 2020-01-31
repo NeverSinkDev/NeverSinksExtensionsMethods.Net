@@ -10,6 +10,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps: 
+- task: gittools.gitversion.gitversion-task.GitVersion@5
+  displayName: gitversion
+  inputs:
+    useConfigFile: true
+    configFilePath: GitVersion.yml
 
 - task: DotNetCoreInstaller@0
   displayName: 'Use .NET Core sdk 2.2.104' 
